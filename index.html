@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chai Culture | Brew the Royal Tradition</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <div class="logo-icon">☕</div>
+      <div class="logo-text">Chai Culture</div>
+    </div>
+    <div class="tagline">Brew the Royal Tradition</div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>The Royal <span>Chai Experience</span> Awaits</h1>
+      <div class="launching">Launching Soon</div>
+
+      <p class="description">
+        Chai Culture brings the richness of royal Indian chai traditions into a modern, premium instant experience.
+        Crafted with heritage, warmth, and authenticity — one cup at a time.
+      </p>
+    </div>
+
+    <!-- Signup -->
+    <div class="signup">
+      <h3>Stay Updated</h3>
+      <p>Sign up to be the first to know when we launch.</p>
+
+      <form class="form" id="emailForm">
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <button type="submit">Notify Me</button>
+      </form>
+
+      <div class="privacy">We respect your privacy. No spam.</div>
+      <div class="message" id="message"></div>
+    </div>
+
+    <!-- Social -->
+    <div class="socials">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <footer>
+      © 2026 Chai Culture. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById("emailForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const pattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+
+      if (!pattern.test(email)) {
+        message.textContent = "Please enter a valid email address.";
+        message.className = "message error";
+        message.style.display = "block";
+        return;
+      }
+
+      message.textContent = "Thank you! We’ll notify you when we launch.";
+      message.className = "message success";
+      message.style.display = "block";
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
